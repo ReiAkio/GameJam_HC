@@ -3,8 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
+define r = Character("Raphael")
+define a = Character("Akio")
 
 # The game starts here.
 
@@ -24,9 +24,9 @@ label start:
 
     # These display lines of dialogue.
 
-    e "You've created a new Ren'Py game."
+    a "Ta aki Rapha aaaaaaaaa"
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    r "Opora meu irmão"
 
     # This ends the game.
 
