@@ -18,11 +18,8 @@ Local: 		Consultório
 Posicao		Nome					Status		nomeVariavel
 
 1		@Prot__agonista				Volátil		p
-2		O CARECA				Cringe		c
-3		Guitarrista the guy			Cringe		g
-4		M3s7r3 MuR1l0				Cringe		m
-5		Senhor das Trevas			Cringe		s
-6		Rainha do Gado				Normal		r
-7		E-GAROTA				Normal		e
+2		O CARECA the guy			Cringe		c
+3		M3s7r3 MuR1l0				Cringe		m
+4		E-GAROTA				Normal		e
 
 0		Narrador / Vozes da cabeça / DEUS	Intocável	n
