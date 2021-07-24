@@ -1,0 +1,6 @@
+O protagonista terá nivel de cringe 0 no início, conforme vai escolhendo diálogos com outros personagens ele poderá
+aumentar seu nível de cringe até fazer o personagem chorar ou ser legal. No final do jogo teremos o seu nível de cringe.
+
+O protagonista perde nível de cringe conforme seu desconhecimento sobre cringiness (imagens dele perdendo olho, etc.)
+
+Pontuação secreta: Nível de maldade.
