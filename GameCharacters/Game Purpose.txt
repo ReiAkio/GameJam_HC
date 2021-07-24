@@ -20,6 +20,6 @@ Posicao		Nome					Status		nomeVariavel
 1		@Prot__agonista				Volátil		p
 2		O CARECA the guy			Cringe		c
 3		M3s7r3 MuR1l0				Cringe		m
-4		E-GAROTA				Normal		e
+4		E-GAROTA				Cringe		e
 
 0		Narrador / Vozes da cabeça / DEUS	Intocável	n
