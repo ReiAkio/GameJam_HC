@@ -1,10 +1,10 @@
-define p = character("@Prot__agonista")
-define o = character("O CARECA")
-define g = character("Guitarrista de guy")
-define m = character("M3s7r3 MuR1l0")
-define s = character("Senhor das Trevas")
-define r = character("Rainha do GADO")
-define f = character("E-GAROTA")
+define p = Character("@Prot__agonista")
+define o = Character("O CARECA")
+define g = Character("Guitarrista de guy")
+define m = Character("M3s7r3 MuR1l0")
+define s = Character("Senhor das Trevas")
+define r = Character("Rainha do Gado")
+define f = Character("E-GAROTA")
 # The game starts here.
 
 label start:
@@ -23,9 +23,9 @@ label start:
 
     # These display lines of dialogue.
 
-    a "Ta aki Rapha aaaaaaaaa"
+    p "Ta aki Rapha aaaaaaaa"
 
-    r "Opora meu irmão"
+    o "Opora meu irmão"
 
     # This ends the game.
 
