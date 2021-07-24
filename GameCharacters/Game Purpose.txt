@@ -22,5 +22,5 @@ Posicao		Nome					Status
 3		Guitarrista the guy			Cringe
 4		M3s7r3 MuR1l0				Cringe
 5		Senhor das Trevas			Cringe
-6		Rainha do CONSOLO			Normal
+6		Rainha do Gado				Normal
 7		E-GAROTA				Normal
