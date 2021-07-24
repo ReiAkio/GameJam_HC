@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: unexpected EOF while parsing
-    4;
-      ^
+File "game/script.rpy", line 97: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Diga M3s7r3, a que devo a honra?"
+                                      ^
 
 Ren'Py Version: Ren'Py 7.4.6.1693
-Sat Jul 24 19:14:48 2021
+Sat Jul 24 20:03:45 2021
