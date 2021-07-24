@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 17: end of line expected.
-    scene bg MainCharacter.png
-                          ^
+File "game/script.rpy", line 52: choice menuitem expects a non-empty block.
+    "Bem, como foi o seu dia M3s7r3?":
+                                      ^
 
 Ren'Py Version: Ren'Py 7.4.6.1693
-Fri Jul 23 23:18:29 2021
+Fri Jul 23 23:38:07 2021

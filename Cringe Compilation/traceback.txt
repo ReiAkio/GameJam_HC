@@ -1,22 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 26, in script
-    n "Nosso protagonista estava muito empolgado para o seu primeiro dia de trabalho como terapeuta"
-Exception: Sayer 'n' is not defined.
+  File "game/script.rpy", line 40, in script
+    $pontosCringe += 1
+  File "game/script.rpy", line 40, in <module>
+    $pontosCringe += 1
+NameError: name 'pontosCringe' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 26, in script
-    n "Nosso protagonista estava muito empolgado para o seu primeiro dia de trabalho como terapeuta"
-  File "renpy/ast.py", line 680, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "renpy/ast.py", line 574, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'n' is not defined.
+  File "game/script.rpy", line 40, in script
+    $pontosCringe += 1
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 40, in <module>
+    $pontosCringe += 1
+NameError: name 'pontosCringe' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.6.1693
 Cringe Compilation 1.0
-Fri Jul 23 23:13:52 2021
+Fri Jul 23 23:30:43 2021
