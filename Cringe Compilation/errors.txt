@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 52: choice menuitem expects a non-empty block.
-    "Bem, como foi o seu dia M3s7r3?":
-                                      ^
+File "game/script.rpy", line 15: unexpected EOF while parsing
+    4;
+      ^
 
 Ren'Py Version: Ren'Py 7.4.6.1693
-Fri Jul 23 23:38:07 2021
+Sat Jul 24 19:14:48 2021
