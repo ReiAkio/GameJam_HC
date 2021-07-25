@@ -6,8 +6,8 @@ define e = Character("E-GAROTA")
 define n = Character("Narrador")
 
 # Imagens
-image image_bg = "images/E-GAROTA.png"
-image image_e = "images/MainCharacter.png"
+image image_bg = "images/Background.png"
+image image_e = "images/E-GAROTA.png"
 image image_mf = "images/M3S7R3 MUR1L0_Feliz.png"
 image image_mt = "images/M3S7R3 MUR1L0_Triste.png"
 
@@ -23,13 +23,6 @@ label start:
     # images directory to show it.
 
     scene image_bg
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-
-    show image_m
 
     # Narrador no início do jogo.
 
@@ -60,14 +53,11 @@ label start:
 
 label mestreMurilo:
     # Início da fase do mestre murilo
-
-    show image_mf
-
     # Recepção
 
     n "Pela porta entrava uma figura um tanto estranha..."
     n "Você não sabia ao certo como reagir, mas precisava dar continuidade na consulta."
-
+    show image_mf
     menu:
         "Bom dia senhor!":
             m "3 M3s7r3 p4R4 v0C3, s3u b00m3r!"
@@ -131,13 +121,14 @@ label mestreMurilo:
                     $pontosCringe += 1
                     n "O seu primeiro cliente saiu insatisfeito..."
                     n "Talvez você deva reconsiderar seu look para... atrair mais clientes?"
+                    hide image_mf
                     jump exit_mestreMurilo
-                "Não, eu quero dizer que os métodos não irão te ajudar mais, mas eu posso pensar em algo..."
+                "Não, eu quero dizer que os métodos não irão te ajudar mais, mas eu posso pensar em algo...":
                     m "4gr4d3ç0, 3nt40... c0m0 3u p0ss0 m3lh0r4r?"
 
     # Sugestões
 
-    p "Você poderia tentar entrar em contato com um fonoaudiólogo":
+    p "Você poderia tentar entrar em contato com um fonoaudiólogo"
     m "S1m, m1nh4 m43 f01 4 pr1m31r4 4 sug3r1r 1ss0..."
     n "O seu cliente suspira desmotivado..."
     m "P0r3m n40 func10n0u...."
@@ -206,19 +197,19 @@ label mestreMurilo:
         "Até mais senhor!":
             m "N40 v0lt4r31..."
 
+    hide image_mf
+
     # Fim da fase
     jump exit_mestreMurilo
 
 label eGarota:
     # Início da fase da e-garota
-
-    show image_e
-
     # Recepção
 
     n "Depois de um certo tempo você sente que um novo cliente se aproxima."
     n "Uma perna após a outra ela entra na sala, uma figura um tanto quanto inusitada..."
     n "Sem saber como reagir além de ficar surpreso você a recebe."
+    show image_e
 
     menu:
         "Bem Vinda!":
@@ -244,9 +235,9 @@ label eGarota:
     menu:
         "Porquê você quer deixar de ser uma e-girl?":
             e "O termo é e-garota, por favor..."
-        "Porque você quer deixar de ser uma e-garota?"
+        "Porque você quer deixar de ser uma e-garota?":
             e "Hm..."
-        "Você odeia cabelos coloridos?"
+        "Você odeia cabelos coloridos?":
             e "Acho um pouco brega, mas eu gosto."
 
     e "Eu acho que as minhas amigar que também são e-garotas fazem coisas muito estranhas..."
@@ -340,6 +331,8 @@ label eGarota:
 
     # Conclusões
     # Despedida
+
+    hide image_e
 
     # Fim da fase
     jump exit_eGarota
