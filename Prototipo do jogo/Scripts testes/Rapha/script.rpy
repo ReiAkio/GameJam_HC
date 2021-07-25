@@ -219,6 +219,8 @@ label eGarota:
             e "Oi?"
             p "Oi"
             e "..."
+            p "..."
+            $pontosCringe += 1
 
     n "Esquecendo sua função você fica sem palavras..."
     n "Após um tempo você prossegue com a consulta..."
@@ -239,6 +241,7 @@ label eGarota:
             e "Hm..."
         "Você odeia cabelos coloridos?":
             e "Acho um pouco brega, mas eu gosto."
+            $pontosCringe += 1
 
     e "Eu acho que as minhas amigar que também são e-garotas fazem coisas muito estranhas..."
     e "Eu não faço oque elas fazem, mas meus fãns querem... e eu não quero..."
@@ -250,13 +253,17 @@ label eGarota:
             e "Elas vendem pack de vários lugares..."
             menu:
                 "Quais?":
+                    $ponstosCringe += 1
                     e "..."
                 "Entendo... eu compro frequentemente das minhas favoritas":
+                    $pontosCringe += 1
                     e "Quanto você paga geralmente?"
                     menu:
                         "Uns $200 por foto":
+                            $pontosCringe += 1
                             e "Hm... realmente é uma boa monetização, mas não para mim!"
                         "Uns $1000 por vídeo":
+                            $pontosCringe += 2
                             e "Eu faria vídeos não-sexuais por esse preço..."
                             n "Ela faz uma cara animada!"
                             p "... mas"
@@ -264,11 +271,13 @@ label eGarota:
                             n "Apesar de saber que ninguém iria comprar..."
                             n "Você não diz nada..."
                         "Mais de $8000 geralmente...":
+                            $pontosCringe += 3
                             e "NOSSA!"
                             e "Eu..."
                             e "Que tipo de pack você compra por esse valor?"
                             menu:
                                 "Fotos do pé em cima do sorvete com feijão nos dedos...":
+                                    $pontosCringe += 3
                                     n "Apesar da feição de nojo e desgosto estampada no rosto dela..."
                                     n "Ela engole em seco e diz..."
                                     e "Q... Que bom..."
@@ -285,12 +294,14 @@ label eGarota:
             n "Como se ela se lembrasse do porque ela quer deixar de ser uma e-garota..."
             e "Entre outras coisas sabe..."
         "Entendo... então você não vende pack?":
+            $pontosCringe += 1
             n "Com uma cara desconfiada ela diz..."
             e "Não, mas talvez eu possa te recomendar uma amiga minha que vende!"
             menu:
                 "Qual?":
                     e "Era um teste seu babaca... não vou te passar, podemos focar na consulta?"
                 "Ah, eu só queria se fosse o seu mesmo...":
+                    $pontosCringe += 1
                     n "Ela cora brevemente e olha para o lado com um ar de vergonha..."
                     e "B... bobo..."
 
@@ -309,6 +320,7 @@ label eGarota:
             e "Mas como eu vou me comunicar com os meus fãns e minhas amigas?"
             menu:
                 "Hmm... realmente, isso não seria uma escolha fácil, mas eu acredito que você daria um jeito!":
+                    $pontosCringe += 1
                     e "Entendo..."
                 "Só abandone tudo e esqueça as redes sociais!":
                     e "Hmm quando você fizer o mesmo eu faço!"
@@ -318,19 +330,21 @@ label eGarota:
                 "Yoga":
                     e "É uma boa idéia..."
                 "Origamis do Kama Sutra":
+                    $pontosCringe += 2
                     n "Ela faz uma cara de surpresa e parece intrigada"
                     e "Hm..."
                 "Ler fan-fics":
+                    $pontosCringe += 1
                     e "Talvez..."
                     p "Mas só de shipps cannon por favor!"
                     e "..."
 
-    # Reação final
-
-
-
-    # Conclusões
     # Despedida
+
+    e "Bem, obrigada doutor!"
+    e "Ainda não sei bem o que fazer mas tenho que ir para fazer uma live daqui a 30 min!"
+    n "Ela se levanta e sai do escritório rapidamente..."
+    p "T.. tchau"
 
     hide image_e
 
