@@ -224,7 +224,7 @@ label eGarota:
     n "Sem saber como reagir além de ficar surpreso você a recebe."
 
     stop music fadeout 1.0
-    play sound "audio/eGarotaMusic.mp3" fadein 1.0 volume 0.05 loop
+    play sound "audio/eGarotaMusic.mp3" fadein 1.0 volume 0.01 loop
     show image_ef
 
     menu:
@@ -269,7 +269,7 @@ label eGarota:
             $pontosCringe += 1
 
     e "Eu acho que algumas de minhas amigas que também são e-garotas fazem coisas muito estranhas..."
-    e "Eu não faço o que elas fazem, mas meus fãns querem... e eu não quero..."
+    e "Eu não faço o que elas fazem, mas meus fãs querem... e eu não quero..."
 
     # Questionamentos
 
@@ -280,7 +280,7 @@ label eGarota:
                 "Não diga mais nada...":
                     e "Entendo..."
                 "Por quanto?":
-                    $ponstosCringe += 1
+                    $pontosCringe += 1
                     e "..."
             e "Algumas delas também fazem vídeos imitando animais..."
             n "A cada..."
@@ -336,13 +336,14 @@ label eGarota:
     e "Bem, obrigada doutor!"
     e "Ainda não sei bem o que fazer mas tenho que ir para fazer uma live daqui a 30 min!"
     n "Ela se levanta e sai do escritório rapidamente..."
-    p "T.. tchau"
-    n "Você se sente estranho depois dessa consulta..."
-    n "Porém acredita que ainda há tempo para outra..."
 
     hide image_ef
     stop music fadeout 1.0
     play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
+
+    p "T.. tchau"
+    n "Você se sente estranho depois dessa consulta..."
+    n "Porém acredita que ainda há tempo para outra..."
 
     # Fim da fase
     jump exit_eGarota
@@ -353,7 +354,7 @@ label oCarecaTheGuy:
     n "Você levanta e abre a porta"
 
     stop music fadeout 1.0
-    play sound "audio/carecaMusic.mp3" fadein 1.0 volume 0.1 loop
+    play sound "audio/carecaMusic.mp3" fadein 1.0 volume 0.06 loop
     show image_cf
 
     c " ... "
@@ -473,7 +474,7 @@ label oCarecaTheGuy:
             p "E também é aconselhavel um hobby, para ocupar o tempo livre"
             p "Você tem algum hobby que costuma praticar?"
             c "Na verdade não..."
-            p "Existem muitos hobbies interessantes que você pode escolher"
+            p "Existem muitos hobbies interessantes que você pode escolher como..."
             menu:
                 "Jogar bola":
                     c "interessante..."

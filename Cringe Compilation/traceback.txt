@@ -1,38 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 30, in script
-    play sound "<loop>audio/basicMusic.mp3"
-  File "renpy/common/000statements.rpy", line 305, in execute_play_sound
-    relative_volume=eval(p.get("volume", "1.0")))
-Exception: Parsing audio spec u'<loop>audio/basicMusic.mp3': expected float at end..
+  File "game/script.rpy", line 283, in script
+    $ponstosCringe += 1
+  File "game/script.rpy", line 283, in <module>
+    $ponstosCringe += 1
+NameError: name 'ponstosCringe' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 30, in script
-    play sound "<loop>audio/basicMusic.mp3"
-  File "renpy/ast.py", line 2009, in execute
-    self.call("execute")
-  File "renpy/ast.py", line 1997, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-  File "renpy/statements.py", line 278, in call
-    return method(parsed, *args, **kwargs)
-  File "renpy/common/000statements.rpy", line 305, in execute_play_sound
-    relative_volume=eval(p.get("volume", "1.0")))
-  File "renpy/audio/sound.py", line 40, in play
-    relative_volume=relative_volume)
-  File "renpy/audio/music.py", line 127, in play
-    c.enqueue(filenames, loop=loop, synchro_start=synchro_start, fadein=fadein, tight=tight, loop_only=loop_only, relative_volume=relative_volume)
-  File "renpy/audio/audio.py", line 636, in enqueue
-    filename, _, _ = self.split_filename(filename, False)
-  File "renpy/audio/audio.py", line 395, in split_filename
-    loop = expect_float()
-  File "renpy/audio/audio.py", line 347, in expect_float
-    raise exception("expected float at end.")
-Exception: Parsing audio spec u'<loop>audio/basicMusic.mp3': expected float at end..
+  File "game/script.rpy", line 283, in script
+    $ponstosCringe += 1
+  File "renpy/ast.py", line 922, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2218, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 283, in <module>
+    $ponstosCringe += 1
+NameError: name 'ponstosCringe' is not defined
 
 Windows-10-10.0.19041
 Ren'Py 7.4.6.1693
 Cringe Compilation 1.0
-Sun Jul 25 19:43:19 2021
+Sun Jul 25 20:42:16 2021
