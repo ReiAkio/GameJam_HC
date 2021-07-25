@@ -353,7 +353,7 @@ label oCarecaTheGuy:
     n "Você levanta e abre a porta"
 
     stop music fadeout 1.0
-    play sound "audio/muriloMusic.mp3" fadein 1.0 volume 0.1 loop
+    play sound "audio/carecaMusic.mp3" fadein 1.0 volume 0.1 loop
     show image_cf
 
     c " ... "
