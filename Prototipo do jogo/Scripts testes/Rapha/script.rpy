@@ -7,7 +7,8 @@ define n = Character("Narrador")
 
 # Imagens
 image image_bg = "images/Background.png"
-image image_e = "images/E-GAROTA.png"
+image image_ef = "images/E-GAROTA_Feliz.png"
+image image_es = "images/E-GAROTA_Normal.png"
 image image_mf = "images/M3S7R3 MUR1L0_Triste.png"
 image image_mt = "images/M3S7R3 MUR1L0_Feliz.png"
 image image_cf = "images/CarecaTheGuy_Feliz.png"
@@ -134,10 +135,10 @@ label mestreMurilo:
     m "S1m, m1nh4 m43 f01 4 pr1m31r4 4 sug3r1r 1ss0..."
     n "O seu cliente suspira desmotivado..."
     m "P0r3m n40 func10n0u...."
-    "Sendo assim, você poderia tentar recitar certas partes de um livro sem ouvir sua própria voz."
+    p "Sendo assim, você poderia tentar recitar certas partes de um livro sem ouvir sua própria voz."
     m "3ss3 m3t0d0 s0 func10n4 3m f1lm3s..."
     m "S1m, 3u j4 t3nt31..."
-    p "Que você tentar um teste de recitar palavras?"
+    p "Que tal você tentar um teste de recitar palavras?"
     m "p0d3 s3r."
     p "Tente recitar..."
     menu:
@@ -211,7 +212,7 @@ label eGarota:
     n "Depois de um certo tempo você sente que um novo cliente se aproxima."
     n "Uma perna após a outra ela entra na sala, uma figura um tanto quanto inusitada..."
     n "Sem saber como reagir além de ficar surpreso você a recebe."
-    show image_e
+    show image_ef
 
     menu:
         "Bem Vinda!":
@@ -348,7 +349,7 @@ label eGarota:
     n "Ela se levanta e sai do escritório rapidamente..."
     p "T.. tchau"
 
-    hide image_e
+    hide image_ef
 
     # Fim da fase
     jump exit_eGarota
