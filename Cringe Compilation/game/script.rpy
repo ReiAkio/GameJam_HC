@@ -6,7 +6,7 @@ define e = Character("E-GAROTA")
 define n = Character("Narrador")
 
 # Imagens
-image image_bg = "images/Background.png"
+image image_bg = "images/office.jpg"
 image image_ef = "images/E-GAROTA_Feliz.png"
 image image_es = "images/E-GAROTA_Normal.png"
 image image_mf = "images/M3S7R3 MUR1L0_Triste.png"

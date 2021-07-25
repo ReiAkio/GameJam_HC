@@ -1,24 +1,74 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 52, in script
-    if $pontosCringe >= $minimoDePontosCringe:
-SyntaxError: invalid syntax (script.rpy, line 52)
+While loading <'Image' u'images/office.png'>:
+  File "game/script.rpy", line 32, in script
+    n "Nosso protagonista estava muito empolgado para o seu primeiro dia de trabalho como terapeuta."
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+IOError: Couldn't find file 'images/office.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 52, in script
-    if $pontosCringe >= $minimoDePontosCringe:
-  File "renpy/ast.py", line 1892, in execute
-    if renpy.python.py_eval(condition):
-  File "renpy/python.py", line 2247, in py_eval
-    code = py_compile(code, 'eval')
-  File "renpy/python.py", line 835, in py_compile
+  File "game/script.rpy", line 32, in script
+    n "Nosso protagonista estava muito empolgado para o seu primeiro dia de trabalho como terapeuta."
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/ast.py", line 683, in execute
+    statement_name(getattr(who, "statement_name", "say"))
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/ast.py", line 46, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 114, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 69, in _window_show
+    renpy.with_statement(trans)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/exports.py", line 1682, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/core.py", line 2718, in do_with
+    clear=clear)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/core.py", line 3276, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/core.py", line 3792, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/core.py", line 2521, in draw_screen
+    renpy.config.screen_height,
+  File "render.pyx", line 492, in renpy.display.render.render_screen
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/layout.py", line 786, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/transition.py", line 367, in render
+    bottom = render(self.old_widget, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/layout.py", line 786, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/layout.py", line 786, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/transform.py", line 708, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 140, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/image.py", line 501, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/image.py", line 307, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 263, in renpy.display.render.render
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/im.py", line 607, in render
+    return cache.get(self, render=True)
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/im.py", line 271, in get
+    surf = image.load()
+  File "C:\Users\user\Documents\renpy-7.3.5-sdk/renpy/display/im.py", line 688, in load
     raise e
-SyntaxError: invalid syntax (script.rpy, line 52)
+IOError: Couldn't find file 'images/office.png'.
 
 Windows-10-10.0.19041
 Ren'Py 7.4.6.1693
 Cringe Compilation 1.0
-Sat Jul 24 19:15:46 2021
+Sun Jul 25 17:25:51 2021
