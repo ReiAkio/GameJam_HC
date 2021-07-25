@@ -6,9 +6,10 @@ define e = Character("E-GAROTA")
 define n = Character("Narrador")
 
 # Imagens
-image image_bg = "images/Background.png"
-image image_p = "images/MainCharacter.png"
-image image_m = "images/Murilo.png"
+image image_bg = "images/E-GAROTA.png"
+image image_e = "images/MainCharacter.png"
+image image_mf = "images/M3S7R3 MUR1L0_Feliz.png"
+image image_mt = "images/M3S7R3 MUR1L0_Triste.png"
 
 # Variáveis globais
 define pontosCringe = 0
@@ -59,6 +60,9 @@ label start:
 
 label mestreMurilo:
     # Início da fase do mestre murilo
+
+    show image_mf
+
     # Recepção
 
     n "Pela porta entrava uma figura um tanto estranha..."
@@ -208,6 +212,8 @@ label mestreMurilo:
 label eGarota:
     # Início da fase da e-garota
 
+    show image_e
+
     # Recepção
 
     n "Depois de um certo tempo você sente que um novo cliente se aproxima."
@@ -330,7 +336,7 @@ label eGarota:
 
     # Reação final
 
-    
+
 
     # Conclusões
     # Despedida
