@@ -208,7 +208,132 @@ label mestreMurilo:
 label eGarota:
     # Início da fase da e-garota
 
+    # Recepção
 
+    n "Depois de um certo tempo você sente que um novo cliente se aproxima."
+    n "Uma perna após a outra ela entra na sala, uma figura um tanto quanto inusitada..."
+    n "Sem saber como reagir além de ficar surpreso você a recebe."
+
+    menu:
+        "Bem Vinda!":
+            e "Olá!"
+            p "..."
+        "...":
+            e "Oi?"
+            p "Oi"
+            e "..."
+
+    n "Esquecendo sua função você fica sem palavras..."
+    n "Após um tempo você prossegue com a consulta..."
+
+    # Motivo da visita
+
+    p "Qual o motivo da sua visita hoje?"
+    e "Bem... eu estou com um problema..."
+    e "Eu me considero uma e-garota atualmente"
+    n "Ela suspira profundamente com um olhar vazio..."
+    e "E eu quero parar de ser uma e-garota!"
+    n "Você se surpreende por um instante porém volta a raciocinar depois de lamber o pirulito pendurado na sua mesa..."
+
+    menu:
+        "Porquê você quer deixar de ser uma e-girl?":
+            e "O termo é e-garota, por favor..."
+        "Porque você quer deixar de ser uma e-garota?"
+            e "Hm..."
+        "Você odeia cabelos coloridos?"
+            e "Acho um pouco brega, mas eu gosto."
+
+    e "Eu acho que as minhas amigar que também são e-garotas fazem coisas muito estranhas..."
+    e "Eu não faço oque elas fazem, mas meus fãns querem... e eu não quero..."
+
+    # Questionamentos
+
+    menu:
+        "Oque suas amigas fazem?":
+            e "Elas vendem pack de vários lugares..."
+            menu:
+                "Quais?":
+                    e "..."
+                "Entendo... eu compro frequentemente das minhas favoritas":
+                    e "Quanto você paga geralmente?"
+                    menu:
+                        "Uns $200 por foto":
+                            e "Hm... realmente é uma boa monetização, mas não para mim!"
+                        "Uns $1000 por vídeo":
+                            e "Eu faria vídeos não-sexuais por esse preço..."
+                            n "Ela faz uma cara animada!"
+                            p "... mas"
+                            p "esquece..."
+                            n "Apesar de saber que ninguém iria comprar..."
+                            n "Você não diz nada..."
+                        "Mais de $8000 geralmente...":
+                            e "NOSSA!"
+                            e "Eu..."
+                            e "Que tipo de pack você compra por esse valor?"
+                            menu:
+                                "Fotos do pé em cima do sorvete com feijão nos dedos...":
+                                    n "Apesar da feição de nojo e desgosto estampada no rosto dela..."
+                                    n "Ela engole em seco e diz..."
+                                    e "Q... Que bom..."
+                                "... Prefiro não dizer":
+                                    n "Ela olha para você com um ar de curiosidade mas desiste de falar sobre o assunto."
+                                    e "Hm..."
+            e "Minhas amigas também fazem vídeos imitando animais..."
+            n "A cada..."
+            e "Bebendo leite a uma velocidade que elas não conseguem tomar tudo..."
+            n "Coisa que ela diz..."
+            e "Tentam comer frutas inteiras..."
+            n "Seu rosto vai se fechando..."
+            e "Algumas não tomam banho, mas eu prefiro não me aproximar muito delas..."
+            n "Como se ela se lembrasse do porque ela quer deixar de ser uma e-garota..."
+            e "Entre outras coisas sabe..."
+        "Entendo... então você não vende pack?":
+            n "Com uma cara desconfiada ela diz..."
+            e "Não, mas talvez eu possa te recomendar uma amiga minha que vende!"
+            menu:
+                "Qual?":
+                    e "Era um teste seu babaca... não vou te passar, podemos focar na consulta?"
+                "Ah, eu só queria se fosse o seu mesmo...":
+                    n "Ela cora brevemente e olha para o lado com um ar de vergonha..."
+                    e "B... bobo..."
+
+    n "Parecendo ter dúvidas sobre suas escolhas a cliente diz..."
+    e "E... eu disse na live ontem que eu queria deixar de ser e-garota"
+    e "Mas meus fãns não aceitaram muito bem... então não seu o que fazer"
+
+    # Sugestões
+
+    n "Refletindo sobre a situação da sua cliente você pensa em alguns fatores..."
+    p "Bom... dependendo do que você considera ser uma e-garota posso te dizer como deixar de ser..."
+    e "Eu acho que é ser fantástica nas redes sociais... e na internet..."
+    e "E jogar algum jogo..."
+    menu:
+        "Então você poderia tentar se afastar de todas as redes sociais...":
+            e "Mas como eu vou me comunicar com os meus fãns e minhas amigas?"
+            menu:
+                "Hmm... realmente, isso não seria uma escolha fácil, mas eu acredito que você daria um jeito!":
+                    e "Entendo..."
+                "Só abandone tudo e esqueça as redes sociais!":
+                    e "Hmm quando você fizer o mesmo eu faço!"
+        "Você poderia parar de jogar jogos então...":
+            e "Mas eu só jogo LOL, oque eu vou fazer no meu tempo livre?"
+            menu:
+                "Yoga":
+                    e "É uma boa idéia..."
+                "Origamis do Kama Sutra":
+                    n "Ela faz uma cara de surpresa e parece intrigada"
+                    e "Hm..."
+                "Ler fan-fics":
+                    e "Talvez..."
+                    p "Mas só de shipps cannon por favor!"
+                    e "..."
+
+    # Reação final
+
+    
+
+    # Conclusões
+    # Despedida
 
     # Fim da fase
     jump exit_eGarota
