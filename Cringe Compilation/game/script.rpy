@@ -247,12 +247,12 @@ label eGarota:
             $pontosCringe += 1
 
     e "Eu acho que as minhas amigas que também são e-garotas fazem coisas muito estranhas..."
-    e "Eu não faço oque elas fazem, mas meus fãns querem... e eu não quero..."
+    e "Eu não faço o que elas fazem, mas meus fãns querem... e eu não quero..."
 
     # Questionamentos
 
     menu:
-        "Oque suas amigas fazem?":
+        "O que suas amigas fazem?":
             e "Elas vendem pack de vários lugares..."
             menu:
                 "Quais?":
