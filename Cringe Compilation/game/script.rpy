@@ -14,6 +14,7 @@ image image_mt = "images/M3S7R3 MUR1L0_Feliz.png"
 image image_cf = "images/CarecaTheGuy_Feliz.png"
 image image_ct = "images/CarecaTheGuy_Triste.png"
 
+
 # Variáveis globais
 define pontosCringe = 0
 define minimoDePontosCringe = 4
@@ -26,6 +27,7 @@ label start:
     # images directory to show it.
 
     scene image_bg
+    play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
 
     # Narrador no início do jogo.
 
@@ -59,8 +61,11 @@ label mestreMurilo:
     # Recepção
 
     n "Pela porta entrava uma figura um tanto estranha..."
-    n "Você não sabia ao certo como reagir, mas precisava dar continuidade na consulta."
+    n "Você não sabia ao certo como reagir, mas precisava dar início à consulta."
+    stop music
+    play sound "audio/muriloMusic.mp3" volume 0.1 loop
     show image_mf
+
     menu:
         "Bom dia senhor!":
             m "3 M3s7r3 p4R4 v0C3, s3u b00m3r!"
@@ -93,6 +98,7 @@ label mestreMurilo:
             n "Ele finalmente se recorda que tem problemas a tratar."
             m "1nf3l1zm3nt3 1r3i 3xpl1c4r m3us pr0bl3m4s, tr4t3 d3 s3r um pr0f1ss10n4l d3c3nt3..."
         "Diga M3s7r3, a que devo a honra?":
+            $pontosCringe += 1
             m "0bR1g4d0, 1r3i 3xpl1c4r m3us pr0bl3m4s..."
 
     m "Pr1m31r4m3nt3 4s p3ss04s d1z3m qu3 0 m3u j31t0 d3 f4l4r é cr1ng3..."
@@ -121,10 +127,12 @@ label mestreMurilo:
             menu:
                 "Sim, já vai tarde seu cringe":
                     m "4d3us..."
+                    hide image_mf
+                    stop music fadeout 1.0
+                    play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
                     $pontosCringe += 1
                     n "O seu primeiro cliente saiu insatisfeito..."
                     n "Talvez você deva reconsiderar seu look para... atrair mais clientes?"
-                    hide image_mf
                     jump exit_mestreMurilo
                 "Não, eu quero dizer que os métodos não irão te ajudar mais, mas eu posso pensar em algo...":
                     m "4gr4d3ç0, 3nt40... c0m0 3u p0ss0 m3lh0r4r?"
@@ -201,6 +209,8 @@ label mestreMurilo:
             m "N40 v0lt4r31..."
 
     hide image_mf
+    stop music fadeout 1.0
+    play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
 
     # Fim da fase
     jump exit_mestreMurilo
@@ -212,6 +222,9 @@ label eGarota:
     n "Depois de um certo tempo você sente que um novo cliente se aproxima."
     n "Uma perna após a outra ela entra na sala, uma figura um tanto quanto inusitada..."
     n "Sem saber como reagir além de ficar surpreso você a recebe."
+
+    stop music fadeout 1.0
+    play sound "audio/eGarotaMusic.mp3" fadein 1.0 volume 0.05 loop
     show image_ef
 
     menu:
@@ -234,8 +247,17 @@ label eGarota:
     e "Bem... eu estou com um problema..."
     e "Eu me considero uma e-garota atualmente"
     n "Ela suspira profundamente com um olhar vazio..."
-    e "E eu quero parar de ser uma e-garota!"
-    n "Você se surpreende por um instante porém volta a raciocinar depois de lamber o pirulito pendurado na sua mesa..."
+    e "E eu quero deixar de ser uma e-garota!"
+    n "Você se surpreende por um instante e deixa de raciocinar..."
+    menu:
+        "Lamber o pirulito pendurado na sua mesa...":
+            $pontosCringe += 1
+            "..."
+            e "Eh..."
+            n "Repentinamente você volta a raciocinar..."
+        "Tomar um copo de água":
+            "..."
+            n "Você volta a raciocinar"
 
     menu:
         "Porquê você quer deixar de ser uma e-girl?":
@@ -246,71 +268,38 @@ label eGarota:
             e "Acho um pouco brega, mas eu gosto."
             $pontosCringe += 1
 
-    e "Eu acho que as minhas amigas que também são e-garotas fazem coisas muito estranhas..."
+    e "Eu acho que algumas de minhas amigas que também são e-garotas fazem coisas muito estranhas..."
     e "Eu não faço o que elas fazem, mas meus fãns querem... e eu não quero..."
 
     # Questionamentos
 
     menu:
-        "O que suas amigas fazem?":
-            e "Elas vendem pack de vários lugares..."
+        "O que essas suas amigas fazem?":
+            e "Elas vendem pack..."
             menu:
-                "Quais?":
+                "Não diga mais nada...":
+                    e "Entendo..."
+                "Por quanto?":
                     $ponstosCringe += 1
                     e "..."
-                "Entendo... eu compro frequentemente das minhas favoritas":
-                    $pontosCringe += 1
-                    e "Quanto você paga geralmente?"
-                    menu:
-                        "Uns $200 por foto":
-                            $pontosCringe += 1
-                            e "Hm... realmente é uma boa monetização, mas não para mim!"
-                        "Uns $1000 por vídeo":
-                            $pontosCringe += 2
-                            e "Eu faria vídeos não-sexuais por esse preço..."
-                            n "Ela faz uma cara animada!"
-                            p "... mas"
-                            p "esquece..."
-                            n "Apesar de saber que ninguém iria comprar..."
-                            n "Você não diz nada..."
-                        "Mais de $8000 geralmente...":
-                            $pontosCringe += 3
-                            e "NOSSA!"
-                            e "Eu..."
-                            e "Que tipo de pack você compra por esse valor?"
-                            menu:
-                                "Fotos do pé em cima do sorvete com feijão nos dedos...":
-                                    $pontosCringe += 3
-                                    n "Apesar da feição de nojo e desgosto estampada no rosto dela..."
-                                    n "Ela engole em seco e diz..."
-                                    e "Q... Que bom..."
-                                "... Prefiro não dizer":
-                                    n "Ela olha para você com um ar de curiosidade mas desiste de falar sobre o assunto."
-                                    e "Hm..."
-            e "Minhas amigas também fazem vídeos imitando animais..."
+            e "Algumas delas também fazem vídeos imitando animais..."
             n "A cada..."
             e "Bebendo leite a uma velocidade que elas não conseguem tomar tudo..."
-            n "Coisa que ela diz..."
+            n "Palavra proferida..."
             e "Tentam comer frutas inteiras..."
             n "Seu rosto vai se fechando..."
             e "Algumas não tomam banho, mas eu prefiro não me aproximar muito delas..."
-            n "Como se ela se lembrasse do porque ela quer deixar de ser uma e-garota..."
+            n "Como se ela se lembrasse do porque ela não quer se tornar uma e-garota como algumas de suas amigas..."
             e "Entre outras coisas sabe..."
         "Entendo... então você não vende pack?":
             $pontosCringe += 1
             n "Com uma cara desconfiada ela diz..."
-            e "Não, mas talvez eu possa te recomendar uma amiga minha que vende!"
-            menu:
-                "Qual?":
-                    e "Era um teste seu babaca... não vou te passar, podemos focar na consulta?"
-                "Ah, eu só queria se fosse o seu mesmo...":
-                    $pontosCringe += 1
-                    n "Ela cora brevemente e olha para o lado com um ar de vergonha..."
-                    e "B... bobo..."
+            e "Não, porque?"
+            p "Nada..."
 
     n "Parecendo ter dúvidas sobre suas escolhas a cliente diz..."
-    e "E... eu disse na live ontem que eu queria deixar de ser e-garota"
-    e "Mas meus fãns não aceitaram muito bem... então não seu o que fazer"
+    e "Eu disse na live ontem que eu queria deixar de ser e-garota..."
+    e "Mas meus fãns não aceitaram muito bem, então eu ainda não sei o que fazer..."
 
     # Sugestões
 
@@ -332,8 +321,8 @@ label eGarota:
             menu:
                 "Yoga":
                     e "É uma boa idéia..."
-                "Origamis do Kama Sutra":
-                    $pontosCringe += 2
+                "Participar de uma Game Jam":
+                    $pontosCringe += 1
                     n "Ela faz uma cara de surpresa e parece intrigada"
                     e "Hm..."
                 "Ler fan-fics":
@@ -348,27 +337,219 @@ label eGarota:
     e "Ainda não sei bem o que fazer mas tenho que ir para fazer uma live daqui a 30 min!"
     n "Ela se levanta e sai do escritório rapidamente..."
     p "T.. tchau"
+    n "Você se sente estranho depois dessa consulta..."
+    n "Porém acredita que ainda há tempo para outra..."
 
     hide image_ef
+    stop music fadeout 1.0
+    play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
 
     # Fim da fase
     jump exit_eGarota
 
 label oCarecaTheGuy:
-    # Escreva a fase aqui
+
+    "... Toc Toc"
+    n "Você levanta e abre a porta"
+
+    stop music fadeout 1.0
+    play sound "audio/muriloMusic.mp3" fadein 1.0 volume 0.1 loop
     show image_cf
+
+    c " ... "
     menu:
-        "...":
-            "Oi?"
-        "BBBEEEEEE":
-            "AAAHHH!"
+        " Olá seja bem-vindo":
+            c "... Salve meu bom"
+        "De boa mano?":
+            c "salve salve mano"
+        "O que foi doido? Ta na Disney?":
+            $pontosCringe += 1
+            c "... ehh, eu tenho uma consulta agora"
+            p "... é mesmo, desculpe"
+            c "	Tudo bem ..."
+
+    p "venha, entre"
+
+    #muda a cena
+    p "Por favor, sente-se"
+    p "Então, me diga, como você se sente?"
+    c "Então Dotôr, tenho me sentido muito triste ultimamente"
+    c "Eu fiquei popular por causa de uma trend do tik tok ... "
+    c " de raspar o cabelo com gilete e depois passar alcool em gel"
+    c " já faz mais de um ano isso e meu cabelo não cresce mais"
+    c " e eu não aguento mais ser careca"
+
+    menu:
+        "Isso não é algo normal, você já foi em um especialista nessa area?":
+            c "Nunca, isso é muito cringe"
+            p "Mas porque é cringe?"
+            c "No twitter todo mundo fala que é cringe, logo é cringe"
+            p "Mas você se baseia na opinião dos outros?"
+            c "Não, mas se todo mundo pensar de uma forma eu também vou pensar da mesma forma"
+            p "Isso é exatamente o que basear sua opinião na opinião dos outro é ..."
+
+        "Mas o que isso afeta em seu cotidiano?":
+            c "Faz eu me sentir muito cringe"
+            c "As pessoas falam que carecas são cringe"
+            c "E me zoam por isso sempre"
+            c "Eu já não aguento mais"
+            p "Você não acha que na internet as pessoas falam que tudo é cringe, e não apenas os carecas?"
+            p "E que sempre vão zoar a todos, não importa como a pessoa seja"
+            p "O importante é não se deixar abalar e continuar fazendo as dancinhas do tik tok"
+            c "Nãaao, isso é muito cringe"
+            c "O certo é trend, e não dancinhas"
+
+
+        "*Acariciar e admirar a CARECA*":
+            $pontosCringe += 1
+            n "Você se impressiona com a forma de como aquela careca polida reflete a luz"
+            n "e como se fosse um instinto você tenta tocar para ver se a careca era realmente real"
+            c " ... ehhh ... ehhhhh "
+            c "Dotôr, o que o senhor está tentando fazer??"
+            menu:
+                "me desculpe, não sei o que passou em minha cabeça":
+                    "..."
+                "um mosquito passou ali ... foi mal":
+                    "..."
+                "*CONTINUAR E TOCAR NA CARECA*":
+                    $pontosCringe += 1
+                    n "Você mesmo sentindo que o CARECA the guy estava desconfortavel"
+                    n "continua e toca em sua careca"
+                    n "Você sente como se a careca estivesse a conversar com você"
+                    n "sente como se estivesse conectado com a careca"
+                    n "como se ela te hipnotizasse"
+                    n "ate você ser interrompido pelo CARECA the guy tirando sua mão da cabeça dele"
+                    c "amigo, por favor não encoste na minha careca"
+                    p "ehh... desculpe"
+
+    p "Mas então, esse é o seu único problema?"
+    c "Sim e não..."
+
+    menu:
+        "Isso não é exatamente uma resposta":
+            c "Claro que é"
+            p "Então me explique melhor..."
+        "... ...":
+            $pontosCringe += 1
+            p "..."
+            c "... ..."
+            p "... ... ..."
+            " "
+            p "... hmm ..."
+            " ... "
+            p "... eeh ..."
+            p "Porque você parou de falar?"
+            c "Ué eu te respondi..."
+            p "Explique melhor quais são os seus problemas..."
+
+    c "Então ..."
+    c "O meu outro problema ..."
+    c "Eu não sei como explicar isso direito"
+    c "Eu costumava a fazer as trends do tik tok junto com a minha namorada"
+    c "Mas agora ela me deixou"
+    c "E todos os meus seguidores estão reclamando que eu não estou gravando mais nada com ela..."
+    p "Quais os tipos de coisas que eles costumam falar para você?"
+    c "Muitas coisas"
+    c "Eles me chamam de Blue pill, beta e muitos outras coisas"
+
+    menu:
+        "O que é Blue pill e beta?":
+            c "o que ... você não sabe?"
+            c "aff seu cringe"
+            p "é cringe chamar os outros de cringe"
+            c "... burr"
+            c "você também falou cringe"
+            p "mas em nenhum momento eu falei que eu não era cringe"
+            c "..."
+
+            menu:
+                "O que é Blue pill?":
+                    c "..."
+                "O que é um Beta?":
+                    c "..."
+
+            p "Entendo, mas a opinião das pessoas nas redes sociais geralmente esta deturpada devido ao ambiente toxico..."
+            p "A melhor coisa muitas vezes é só ignorar essas opiniões, pois as pessoas podem estar passando por mais problemas do que você"
+            p "E também é aconselhavel um hobby, para ocupar o tempo livre"
+            p "Você tem algum hobby que costuma praticar?"
+            c "Na verdade não..."
+            p "Existem muitos hobbies interessantes que você pode escolher"
+            menu:
+                "Jogar bola":
+                    c "interessante..."
+                "Jogar video game":
+                    c "interessante..."
+                "Tocar piano":
+                    c "interessante..."
+                "Observar pessoas na rua com um binóculo":
+                    $pontosCringe += 1
+                    c " ... "
+                    p "Pássaros ... quis dizer observar pássaros"
+            c "Eu estou precisando mesmo de um hobby novo"
+            n "Você olha no espelho e percebe que o horario da consulta já acabou"
+            p "Então Careca the guy, espero ter te ajudado hoje, mas já deu o horário da nossa consulta"
+            c "Muito obrigado Doutôr"
+            c "Até mais..."
+
+        "Mas você se importa com essas nomenclaturas?":
+            c "Claro, eu sou um Alpha Based Redpillado"
+            menu:
+                "Isso é exatamente o que um normie diria":
+                    $pontosCringe += 1
+                    c "COMO ASSIM??"
+                    c "VOCÊ ESTA DIZENDO QUE EU SOU UM NORMIE??"
+                    p "Um normie se importa com a opinião das outras pessoas sobre ele"
+                    p "Então você esta se comportando como um"
+                "Um alpha de verdade nunca se deixaria levar com provocações":
+                    $pontosCringe += 1
+                    c "COMO ASSIM??"
+                    c "CLARO QUE EU SOU ALPHA"
+                    p "Um ALPHA de verdade nunca se importaria com a opinião dos betas sobre ele..."
+                    p "Não ligaria se os betas acham que ele é um ALPHA ou não"
+                    p "E apenas um ALPHA sabe que é um ALPHA"
+                "Tem certeza que você é um redpill?":
+                    c "COMO ASSIM??"
+                    c "CLARO QUE EU SOU REDPILL"
+                    p "Um redpill de verdade nunca se importaria com a opinião das outras pessoas sobre ele..."
+                    p "Não ligaria se os outros acham que ele é um redpill ou não"
+                    p "Saberia que todos que falam mal dele, ainda não perceberam que estão sobre o controle do sistema"
+                    p "E apenas você sabe a verdade"
+            c "MEU DEUS ..."
+            c "Agora faz sentido"
+            c "Muito obrigado Doutôr"
+            c "Até a proxima consulta"
+
     hide image_cf
+    stop music fadeout 1.0
+    play sound "audio/basicMusic.mp3" fadein 1.0 volume 0.1 loop
+
     jump exit_oCarecaTheGuy
 
 label finalCringe:
-    # Escreva a fase aqui
+    p "Acredito que este foi meu último cliente...."
+    p "Bem, agora eu posso voltar para casa e relaxar!"
+    n "Você começa a agir estranhamente...."
+    p "Estou um pouco..."
+    p "Um p0uco t0nt0..."
+    n "Nosso protagonista então pega seu celular..."
+    n "Não protagonista..."
+    p "..."
+    n "O que você está fazendo? NÃO BAIXE ISSO!"
+    p "3u n40 t3nho ma1s 3sc0lha..."
+    n "O protagonista infelizmente baixa o tik tok e começa a gravar vídeos em seu escritório"
+    p "341 GUYS, c0m0 v0cês 3st40???"
+    n "Talvez ele ainda tenha salvação..."
+    n "O protagonista então começa a emitir sons quase inaudíveis..."
+    n "Dos seus {i}ASMR{/i} pode-se ouvir coisas estranhas como..."
+    p "{i}G4l3ra... f1qu3m 4t3nt0s qu3 hoj3 a n0ite eu vou 4brir uma l1ve...{/i}"
+    p "{i}V0u v3nd3r m3u prim3iro pack...{/i}"
+    n "Sim, aquilo era o seu fim..."
+
     return
 
 label finalNorm:
-    # Escreva a fase aqui
+    n "Com seu último cliente saindo, você suspira..."
+    p "Ah... foi um longo dia..."
+    n "Você se levanta e vai embora do escritório para sua casa..."
+
     return
