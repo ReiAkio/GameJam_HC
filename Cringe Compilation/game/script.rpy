@@ -9,6 +9,7 @@ define n = Character("Narrador")
 image image_bg = "images/Background.png"
 image image_p = "images/MainCharacter.png"
 image image_m = "images/Murilo.png"
+image image_e = "images/E-GAROTA.png"
 
 # Variáveis globais
 define pontosCringe = 0
@@ -29,6 +30,7 @@ label start:
 
 
     show image_m
+    show image_e at left
 
     # Narrador no início do jogo.
 
