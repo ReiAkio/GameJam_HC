@@ -1,5 +1,5 @@
 # Personagens
-define p = Character("@Prot__agonista")
+define p = Character("Protagonista")
 define c = Character("O CARECA the guy")
 define m = Character("M3s7r3 MuR1l0")
 define e = Character("E-GAROTA")
@@ -8,8 +8,10 @@ define n = Character("Narrador")
 # Imagens
 image image_bg = "images/Background.png"
 image image_e = "images/E-GAROTA.png"
-image image_mf = "images/M3S7R3 MUR1L0_Feliz.png"
-image image_mt = "images/M3S7R3 MUR1L0_Triste.png"
+image image_mf = "images/M3S7R3 MUR1L0_Triste.png"
+image image_mt = "images/M3S7R3 MUR1L0_Feliz.png"
+image image_cf = "images/CarecaTheGuy_Feliz.png"
+image image_ct = "images/CarecaTheGuy_Triste.png"
 
 # Variáveis globais
 define pontosCringe = 0
@@ -353,6 +355,13 @@ label eGarota:
 
 label oCarecaTheGuy:
     # Escreva a fase aqui
+    show image_cf
+    menu:
+        "...":
+            "Oi?"
+        "BBBEEEEEE":
+            "AAAHHH!"
+    hide image_cf
     jump exit_oCarecaTheGuy
 
 label finalCringe:
